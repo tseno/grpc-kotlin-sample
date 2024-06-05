@@ -1,0 +1,26 @@
+// Protocol Buffersのバージョン指定（デフォルトは2系）
+syntax = "proto3";
+
+// 生成されるファイルのクラスのパッケージ
+package example.greeter;
+
+// 各種オプションを定義する
+// ファイルを分割して出力する
+option java_multiple_files = true;
+
+// インタフェースを定義する（Spring Bootで例えると、Controllerのような部分）
+service Greeter {
+  // `rpc メソッド名 (リクエストの型) returns レスポンスの型`
+  rpc Hello (HelloRequest) returns (HelloResponse);
+}
+
+// リクエスト、レスポンスのデータの定義
+// `message リクエスト、レスポンスの型`
+message HelloRequest {
+  // フィールドの番号（ここでは1）は、そのフィールドの一意の識別子
+  string name = 1;
+}
+
+message HelloResponse {
+  string text = 1;
+}
