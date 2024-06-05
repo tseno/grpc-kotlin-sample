@@ -1,11 +1,11 @@
-# KotlinでgRPCを試す
+# KotlinでgRPC通信
 
 ## gRPCとは
 
 - Googleが開発しているPRC (Remote Procedure Call) フレームワーク
 - HTTP/2
 - Protocol Buffers
-    - IDL（インターフェース定義言語）を使用する
+  - IDL（インターフェース定義言語）を使用する
 - ハイパフォーマンス
 - マイクロサービスでのサービス間通信
 
@@ -118,6 +118,8 @@ $ ./gradlew generateProto
 ```
 
 ### 生成されるファイル
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/88686/3fb63713-9a23-01a3-e091-ee81452a4ca1.png)
 
 - grpc配下・・・　gRPC通信を実現するためのインタフェース
   - GreeterGrpc.kt
@@ -233,3 +235,10 @@ Started. port:50051
 Response Text: Hello Kotlin
 ```
 
+## ソースコード
+
+https://github.com/tseno/grpc-kotlin-sample
+
+## 参考
+
+[Kotlin サーバーサイドプログラミング実践開発](https://direct.gihyo.jp/view/item/000000001458)
